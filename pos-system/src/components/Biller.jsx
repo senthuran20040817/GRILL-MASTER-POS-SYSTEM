@@ -27,7 +27,7 @@ function Biller({ order , deleteOrderItem, clearOrderArray, discount}) {
                 <p className="text-end">{(total*(100-discount)/100).toFixed(2)}</p>
             </div>
             <div className="w-full flex gap-2">
-                <button onClick={() => window.print()} className="cursor-pointer flex-1 bg-[#1d8676] text-white rounded-md text-center py-1">Print Bill</button>
+                <button onClick={() => window.print()} disabled={order.length===0 ? true : false} className="disabled:opacity-50 cursor-pointer flex-1 bg-[#1d8676] text-white rounded-md text-center py-1">Print Bill</button>
                 <button onClick={clearOrderArray} disabled={order.length===0 ? true : false} className="disabled:opacity-50 cursor-pointer flex-1 bg-[#d00000] text-white rounded-md text-center py-1">Clear Cart</button>
             </div>
         </div>

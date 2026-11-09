@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Biller from "./Biller"
 
-function Header({order, deleteOrderItem, clearOrderArray}) {
+function Header({order, deleteOrderItem, clearOrderArray, discount}) {
     const [open, setOpen] = useState(false);
 
     return (
@@ -25,6 +25,7 @@ function Header({order, deleteOrderItem, clearOrderArray}) {
                                     order={order}
                                     deleteOrderItem={deleteOrderItem}
                                     clearOrderArray={clearOrderArray}
+                                    discount={discount}
                                 />
                             </div>
                         </div>

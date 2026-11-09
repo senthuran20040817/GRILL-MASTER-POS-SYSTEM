@@ -62,6 +62,7 @@ function App() {
             order={order}
             deleteOrderItem={deleteOrderItem}
             clearOrderArray={clearOrderArray}
+            discount={discount}
           />
         </div>
         <div className="h-11/12 lg:h-7/8">
@@ -76,7 +77,7 @@ function App() {
           />
         </div>
       </div>
-      <div className="print:block">
+      <div className="hidden print:block">
         <Receipt 
           order={order}
           discount={discount}
