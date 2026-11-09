@@ -1,7 +1,7 @@
-function Biller({ order , deleteOrderItem, clearOrderArray}) {
+function Biller({ order , deleteOrderItem, clearOrderArray, discount}) {
     let count = 1;
     let total = order.reduce((sum, o) => sum + o.price*o.quantity , 0);
-    let discount = 25;
+    
     return (
         <div className="flex flex-col h-full justify-between p-2 gap-2 bg-[#def7ec] rounded-md border-[#26b29d] border-4 ">
             <h2 className="text-center text-white text-2xlp py-1 bg-[#057a55] rounded-md">billing</h2>

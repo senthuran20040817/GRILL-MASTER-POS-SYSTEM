@@ -1,7 +1,7 @@
 import Biller from "./Biller"
 import Inventory from "./Inventory"
 
-function Border({addItem, increaseQty, decreaseQty, order, deleteOrderItem, clearOrderArray}) {
+function Border({addItem, increaseQty, decreaseQty, order, deleteOrderItem, clearOrderArray, discount}) {
     const types = ["burger", "side", "drink", "dessert", "combo"];
       
     return (
@@ -11,6 +11,7 @@ function Border({addItem, increaseQty, decreaseQty, order, deleteOrderItem, clea
                     order={order}
                     deleteOrderItem={deleteOrderItem}
                     clearOrderArray={clearOrderArray}
+                    discount={discount}
                 />
             </div>
             <div className="w-full lg:w-3/4 border-[#26b29d] border-4 rounded-md p-2 md:p-5 overflow-y-auto scrollbar-none">

@@ -6,6 +6,7 @@ import { useState } from "react";
 
 function App() {
   const [order, setOrder] = useState([]);
+  let discount = 8;
 
   function deleteOrderItem(o) {
     console.log("check");
@@ -71,12 +72,14 @@ function App() {
             order={order}
             deleteOrderItem={deleteOrderItem}
             clearOrderArray={clearOrderArray}
+            discount={discount}
           />
         </div>
       </div>
       <div className="print:block">
         <Receipt 
           order={order}
+          discount={discount}
         />
       </div>
     </>
