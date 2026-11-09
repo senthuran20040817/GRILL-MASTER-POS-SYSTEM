@@ -19,7 +19,7 @@ function Receipt({ order, discount }) {
                 <p>-------------------------------------------------------------------------------------</p>
             </div>
             <div className="grow flex flex-col items-center">
-                <div className="flex justify-between font-bold gap-1">
+                <div className="flex justify-between font-bold gap-5">
                     <p className="w-5 text-center">no</p>
                     <p className="w-50 text-center pl-3">item</p>
                     <p className="w-10 text-center">qty</p>
@@ -28,8 +28,8 @@ function Receipt({ order, discount }) {
                 </div>
                 <p>-------------------------------------------------------------------------------------</p>
                 {order.map((o) =>
-                    <div className="flex justify-between gap-4">
-                        <p className="w-5 text-end">{count++}</p>
+                    <div className="flex justify-between gap-5">
+                        <p className="w-5 text-center">{count++}</p>
                         <p className="w-50 pl-3">{o.name}</p>
                         <p className="w-10 text-center">{o.quantity}</p>
                         <p className="w-20 text-end">{(o.price).toFixed(2)}</p>
