@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Biller from "./Biller"
 
-function Header({order}) {
+function Header({order, deleteOrderItem}) {
     const [open, setOpen] = useState(false);
 
     return (
@@ -23,6 +23,7 @@ function Header({order}) {
                             >
                                 <Biller
                                     order={order}
+                                    deleteOrderItem={deleteOrderItem}
                                 />
                             </div>
                         </div>

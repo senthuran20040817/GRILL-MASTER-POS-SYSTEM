@@ -1,4 +1,4 @@
-function Biller({ order }) {
+function Biller({ order , deleteOrderItem}) {
     let count = 1;
     let total = order.reduce((sum, o) => sum + o.price*o.quantity , 0);
     let discount = 25;
@@ -8,11 +8,12 @@ function Biller({ order }) {
             <div className="grow rounded-md overflow-y-scroll scrollbar-none h-100 xl:h-full">
                 {order.map((o) => {
                     return(
-                        <div key={o.name} className="text-sm 2xl:text-lg flex justify-between px-2 bg-[#bcf0da] my-2 border-[#84e1bc] border-2 rounded-sm">
+                        <div key={o.name} className="flex-1 text-sm 2xl:text-lg flex justify-between pl-2 bg-[#bcf0da] my-2 border-[#84e1bc] border-2 rounded-sm">
                             <p className="w-1/8">{count<10 ? 0 : ""}{count++}</p>
                             <p className="w-4/8">{o.name}</p>
                             <p className="w-1/8 text-center">{o.quantity}</p>
                             <p className="w-2/8 text-end">{(o.price * o.quantity).toFixed(2)}</p>
+                            <button onClick={() => deleteOrderItem(o)} className="flex justify-end ml-2"><img className="w-5 " src="./src/assets/delete-svgrepo-com.svg" alt="" /></button>
                         </div>
                     );
                 })}

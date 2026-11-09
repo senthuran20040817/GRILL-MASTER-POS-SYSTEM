@@ -6,6 +6,13 @@ import { useState } from "react";
 function App() {
   const [order, setOrder] = useState([]);
 
+  function deleteOrderItem(o) {
+    console.log("check");
+    setOrder(
+      order.filter((or) => o.name !== or.name)
+    );
+  }
+
   function addItem(item) {
     setOrder(
       [
@@ -44,6 +51,7 @@ function App() {
       <div className="h-1/12 lg:h-1/8">
         <Header 
           order={order}
+          deleteOrderItem={deleteOrderItem}
         />
       </div>
       <div className="h-11/12 lg:h-7/8">
@@ -52,6 +60,7 @@ function App() {
           increaseQty={increaseQty}
           decreaseQty={decreaseQty}
           order={order}
+          deleteOrderItem={deleteOrderItem}
         />
       </div>
     </div>
