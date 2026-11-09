@@ -13,6 +13,12 @@ function App() {
     );
   }
 
+  function clearOrderArray() {
+    setOrder([]);
+  }
+
+
+
   function addItem(item) {
     setOrder(
       [
@@ -52,6 +58,7 @@ function App() {
         <Header 
           order={order}
           deleteOrderItem={deleteOrderItem}
+          clearOrderArray={clearOrderArray}
         />
       </div>
       <div className="h-11/12 lg:h-7/8">
@@ -61,6 +68,7 @@ function App() {
           decreaseQty={decreaseQty}
           order={order}
           deleteOrderItem={deleteOrderItem}
+          clearOrderArray={clearOrderArray}
         />
       </div>
     </div>

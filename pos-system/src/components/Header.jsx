@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Biller from "./Biller"
 
-function Header({order, deleteOrderItem}) {
+function Header({order, deleteOrderItem, clearOrderArray}) {
     const [open, setOpen] = useState(false);
 
     return (
@@ -10,7 +10,7 @@ function Header({order, deleteOrderItem}) {
                 <div className="w-40 xl:w-90 md:w-70 2xl:w-120">
                     <img src="./src/assets/favicon.svg" alt="" />
                 </div>
-                <div onClick={() => setOpen(!open)} className="xl:hidden bg-[#0c5e50] md:p-3 p-2 rounded-md flex justify-center items-center">
+                <div onClick={() => setOpen(!open)} className="lg:hidden bg-[#0c5e50] md:p-3 p-2 rounded-md flex justify-center items-center">
                     <img className="md:w-8 w-3" src="./src/assets/bill-svgrepo-com.svg" alt="bill-icon" />
                     {open && (
                         <div
@@ -24,6 +24,7 @@ function Header({order, deleteOrderItem}) {
                                 <Biller
                                     order={order}
                                     deleteOrderItem={deleteOrderItem}
+                                    clearOrderArray={clearOrderArray}
                                 />
                             </div>
                         </div>
