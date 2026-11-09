@@ -1,6 +1,7 @@
 import './App.css'
 import Header from "./components/Header"
 import Border from "./components/Border"
+import Receipt from "./components/Receipt"
 import { useState } from "react";
 
 function App() {
@@ -53,25 +54,32 @@ function App() {
     );
   }
   return (
-    <div className="flex h-screen flex-col overflow-hidden">
-      <div className="h-1/12 lg:h-1/8">
-        <Header 
+    <>
+      <div className="print:hidden flex h-screen flex-col overflow-hidden">
+        <div className="h-1/12 lg:h-1/8">
+          <Header
+            order={order}
+            deleteOrderItem={deleteOrderItem}
+            clearOrderArray={clearOrderArray}
+          />
+        </div>
+        <div className="h-11/12 lg:h-7/8">
+          <Border
+            addItem={addItem}
+            increaseQty={increaseQty}
+            decreaseQty={decreaseQty}
+            order={order}
+            deleteOrderItem={deleteOrderItem}
+            clearOrderArray={clearOrderArray}
+          />
+        </div>
+      </div>
+      <div className="print:block pl-5 pt-5">
+        <Receipt 
           order={order}
-          deleteOrderItem={deleteOrderItem}
-          clearOrderArray={clearOrderArray}
         />
       </div>
-      <div className="h-11/12 lg:h-7/8">
-        <Border 
-          addItem={addItem}
-          increaseQty={increaseQty}
-          decreaseQty={decreaseQty}
-          order={order}
-          deleteOrderItem={deleteOrderItem}
-          clearOrderArray={clearOrderArray}
-        />
-      </div>
-    </div>
+    </>
   )
 }
 
