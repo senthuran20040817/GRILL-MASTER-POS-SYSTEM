@@ -4,8 +4,8 @@ function Receipt({ order }) {
     const discountPercent = 25;
     const discount = (total*discountPercent/100).toFixed(2);
     return (
-        <div className="min-h-200 h-fit w-150 border flex flex-col items-center rounded-md shadow-2xl">
-            <div className="flex flex-col items-center mt-5">
+        <div className="min-h-200 h-fit w-150 border flex flex-col items-center rounded-md shadow-2xl ml-auto mr-auto mt-17">
+            <div className="flex flex-col items-center mt-2">
                 <p>-------------------------------------------------------------------------------------</p>
                 <p className="font-bold">GRILL MASTER</p>
                 <p>Burgers . Fries . Shakes</p>

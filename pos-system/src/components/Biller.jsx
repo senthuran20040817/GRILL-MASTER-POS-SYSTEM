@@ -21,8 +21,8 @@ function Biller({ order , deleteOrderItem, clearOrderArray}) {
             <div className="bg-[#057a55] text-white h-24 rounded-md grid grid-cols-2 grid-rows-3 p-2 gap-2">
                 <p className="font-bold">Sub. Total : </p>
                 <p className="text-end">{total.toFixed(2)}</p>
-                <p className="font-bold">Discount(%) : </p>
-                <p className="text-end">{discount.toFixed(0)}%</p>
+                <p className="font-bold">Discount({discount}%) : </p>
+                <p className="text-end">{(total*discount/100).toFixed(2)}</p>
                 <p className="font-bold">Net. Total : </p>
                 <p className="text-end">{(total*(100-discount)/100).toFixed(2)}</p>
             </div>

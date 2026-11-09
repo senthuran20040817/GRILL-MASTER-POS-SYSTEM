@@ -74,7 +74,7 @@ function App() {
           />
         </div>
       </div>
-      <div className="print:block pl-5 pt-5">
+      <div className="print:block">
         <Receipt 
           order={order}
         />
